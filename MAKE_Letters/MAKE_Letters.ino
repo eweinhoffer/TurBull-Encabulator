@@ -15,10 +15,19 @@ void setup()
   // test the lights
   
   Encabulator.stripBankA.jumpHeaderToRGB(1, 255, 0, 0);  // Make the strip plugged into Bank A1 turn Red
+  Encabulator.stripBankA.jumpHeaderToRGB(2, 255, 0, 0);
+  Encabulator.stripBankA.jumpHeaderToRGB(3, 255, 0, 0);
+  Encabulator.stripBankA.jumpHeaderToRGB(4, 255, 0, 0);
   delay(1000);                                           // Delay 1 second
   Encabulator.stripBankA.jumpHeaderToRGB(1, 0, 255, 0);  // A1 goes Blue
+  Encabulator.stripBankA.jumpHeaderToRGB(2, 0, 255, 0);
+  Encabulator.stripBankA.jumpHeaderToRGB(3, 0, 255, 0);
+  Encabulator.stripBankA.jumpHeaderToRGB(4, 0, 255, 0);
   delay(1000);
   Encabulator.stripBankA.jumpHeaderToRGB(1, 0, 0, 255);  // Al goes Green
+  Encabulator.stripBankA.jumpHeaderToRGB(2, 0, 0, 255);
+  Encabulator.stripBankA.jumpHeaderToRGB(3, 0, 0, 255);
+  Encabulator.stripBankA.jumpHeaderToRGB(4, 0, 0, 255);
   delay(1000);
 
   Encabulator.blackout(); // turn all LEDs off
