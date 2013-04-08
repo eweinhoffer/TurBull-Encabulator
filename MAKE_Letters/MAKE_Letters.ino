@@ -77,9 +77,9 @@ void loop()
  delay(500);
     for (int i = 0; i < 30; i++) // Flash all letters on and off in a random color.
   {
-    int randR = random(10, 255);
-    int randG = random(10, 255);
-    int randB = random(10, 255);
+    int randR = random(1, 255);
+    int randG = random(1, 255);
+    int randB = random(1, 255);
     Encabulator.stripBankA.jumpHeaderToRGB(1, randR, randG, randB);
     Encabulator.stripBankA.jumpHeaderToRGB(2, randR, randG, randB);
     Encabulator.stripBankA.jumpHeaderToRGB(3, randR, randG, randB);
