@@ -38,26 +38,21 @@ int b = random(0,255);
     strip.show();
     delay(29-inc);
     int buttonState = digitalRead(buttonPin);
-    while (i > 54) {
-      if (buttonState == HIGH) {  
-          strip.setPixelColor(59,255,255,255);
-          strip.setPixelColor(58,255,255,255);
-          strip.setPixelColor(57,255,255,255);
-          strip.setPixelColor(56,255,255,255);
-          strip.setPixelColor(55,255,255,255);
-          break;
-        } 
-      else {
-        strip.setPixelColor(30,255,0,0);
+    while (i > 56) {
+      if (buttonState == HIGH && i == 57) {
+        strip.setPixelColor(30,255,255,255);
+        i = 59;
         break;
+      }
+      else if (buttonState == LOW && i == 57) {
+        i = 0;
+        strip.setPixelColor(30,255,0,0);
+        break; 
       }
     }
   }
-  if (inc == 24) {
-  }
-  else {
-    inc=inc+3;
-  }
+  if (inc == 24) {} // Keeps the speed constant once it gets this high
+  else {inc=inc+3;} // If it isn't high enough, increase the speed.
   
 r = random(0,255);
 g = random(0,255);
@@ -71,27 +66,12 @@ b = random(0,255);
     strip.setPixelColor(i,0,0,0);
     delay(29-inc);
     int buttonState = digitalRead(buttonPin);
-    while (i < 5) {
-      if (buttonState == HIGH) {  
-          strip.setPixelColor(0,255,255,255);
-          strip.setPixelColor(1,255,255,255);
-          strip.setPixelColor(2,255,255,255);
-          strip.setPixelColor(3,255,255,255);
-          strip.setPixelColor(4,255,255,255);
-          break;
-        } 
-      else {
-        strip.setPixelColor(30,255,0,0);
-        break;
-      }
+    while (i > 54) {
+      if (buttonState == HIGH) {break;}
+      else {break;}
     }
   }
-  if (inc == 24) {
-    inc=24;
-  }
-  else {
-    inc=inc+3;
-  }
+  if (inc == 24) {inc=24;}
+  else {inc=inc+3;}
 }
-
 
