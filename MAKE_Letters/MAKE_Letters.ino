@@ -3,7 +3,6 @@
 
 void setup() 
 {               
-
   // startup sequence 
   
   Encabulator.upUpDownDownLeftRightLeftRightBA();
@@ -38,32 +37,48 @@ void setup()
 
 void loop() 
 {
-  for (int i = 0; i < 10; i++) 
+  for (int i = 0; i < 3; i++) 
  { 
     Encabulator.stripBankA.jumpHeaderToRGB(1, 255, 0, 0); // jumpHeadertoRGB([Screw terminal number], [Red value], [Green], [Blue])
     Encabulator.stripBankA.jumpHeaderToRGB(2, 0, 0, 0);
     Encabulator.stripBankA.jumpHeaderToRGB(3, 0, 0, 0); 
     Encabulator.stripBankA.jumpHeaderToRGB(4, 0, 0, 0); 
-    delay(500);
+    delay(400);
     Encabulator.stripBankA.jumpHeaderToRGB(1, 0, 0, 0); 
     Encabulator.stripBankA.jumpHeaderToRGB(2, 255, 255, 0); 
     Encabulator.stripBankA.jumpHeaderToRGB(3, 0, 0, 0); 
     Encabulator.stripBankA.jumpHeaderToRGB(4, 0, 0, 0); 
-    delay(500);
+    delay(400);
     Encabulator.stripBankA.jumpHeaderToRGB(1, 0, 0, 0); 
     Encabulator.stripBankA.jumpHeaderToRGB(2, 0, 0, 0); 
     Encabulator.stripBankA.jumpHeaderToRGB(3, 0, 0, 255); 
     Encabulator.stripBankA.jumpHeaderToRGB(4, 0, 0, 0); 
-    delay(500);
+    delay(400);
     Encabulator.stripBankA.jumpHeaderToRGB(1, 0, 0, 0); 
     Encabulator.stripBankA.jumpHeaderToRGB(2, 0, 0, 0); 
     Encabulator.stripBankA.jumpHeaderToRGB(3, 0, 0, 0); 
     Encabulator.stripBankA.jumpHeaderToRGB(4, 255, 0, 255); 
-    delay(500);
+    delay(400);
  }
  Encabulator.blackout();
  delay(500);
-  for (int i = 0; i < 5; i++) // Flash all letters on and off in red.
+  for (int i = 0; i < 255; i++) 
+ { 
+    int red = i;
+    int green = 255-i;
+    int blue = i;
+    Encabulator.stripBankA.jumpHeaderToRGB(1, red, green, blue);
+    delay(6);
+    Encabulator.stripBankA.jumpHeaderToRGB(2, red, green, blue);
+    delay(6);
+    Encabulator.stripBankA.jumpHeaderToRGB(3, red, green, blue);
+    delay(6);
+    Encabulator.stripBankA.jumpHeaderToRGB(4, red, green, blue);
+    delay(6);
+ }
+ Encabulator.blackout();
+ delay(500);
+  for (int i = 0; i < 3; i++) // Flash all letters on and off in red.
   {
     Encabulator.stripBankA.jumpHeaderToRGB(1, 255, 0, 0);
     Encabulator.stripBankA.jumpHeaderToRGB(2, 255, 0, 0);
@@ -75,7 +90,58 @@ void loop()
   }
  Encabulator.blackout();
  delay(500);
-    for (int i = 0; i < 30; i++) // Flash all letters on and off in a random color.
+   for (int i = 0; i < 3; i++) 
+ { 
+    Encabulator.stripBankA.jumpHeaderToRGB(1, 255, 0, 0); // jumpHeadertoRGB([Screw terminal number], [Red value], [Green], [Blue])
+    Encabulator.stripBankA.jumpHeaderToRGB(2, 0, 0, 0);
+    Encabulator.stripBankA.jumpHeaderToRGB(3, 0, 0, 0); 
+    Encabulator.stripBankA.jumpHeaderToRGB(4, 0, 0, 0); 
+    delay(300);
+    Encabulator.stripBankA.jumpHeaderToRGB(1, 0, 0, 0); 
+    Encabulator.stripBankA.jumpHeaderToRGB(2, 255, 255, 0); 
+    Encabulator.stripBankA.jumpHeaderToRGB(3, 0, 0, 0); 
+    Encabulator.stripBankA.jumpHeaderToRGB(4, 0, 0, 0); 
+    delay(300);
+    Encabulator.stripBankA.jumpHeaderToRGB(1, 0, 0, 0); 
+    Encabulator.stripBankA.jumpHeaderToRGB(2, 0, 0, 0); 
+    Encabulator.stripBankA.jumpHeaderToRGB(3, 0, 0, 255); 
+    Encabulator.stripBankA.jumpHeaderToRGB(4, 0, 0, 0); 
+    delay(300);
+    Encabulator.stripBankA.jumpHeaderToRGB(1, 0, 0, 0); 
+    Encabulator.stripBankA.jumpHeaderToRGB(2, 0, 0, 0); 
+    Encabulator.stripBankA.jumpHeaderToRGB(3, 0, 0, 0); 
+    Encabulator.stripBankA.jumpHeaderToRGB(4, 255, 0, 255); 
+    delay(300);
+    Encabulator.stripBankA.jumpHeaderToRGB(1, 0, 0, 0); 
+    Encabulator.stripBankA.jumpHeaderToRGB(2, 0, 0, 0); 
+    Encabulator.stripBankA.jumpHeaderToRGB(3, 0, 0, 255); 
+    Encabulator.stripBankA.jumpHeaderToRGB(4, 0, 0, 0); 
+    delay(300);
+    Encabulator.stripBankA.jumpHeaderToRGB(1, 0, 0, 0); 
+    Encabulator.stripBankA.jumpHeaderToRGB(2, 255, 255, 0); 
+    Encabulator.stripBankA.jumpHeaderToRGB(3, 0, 0, 0); 
+    Encabulator.stripBankA.jumpHeaderToRGB(4, 0, 0, 0); 
+    delay(300);
+ }
+ Encabulator.blackout();
+ delay(500);
+   for (int i = 0; i < 255; i++) 
+ { 
+    int red = i;
+    int green = i;
+    int blue = 255-i;
+    Encabulator.stripBankA.jumpHeaderToRGB(1, red, green, blue);
+    delay(6);
+    Encabulator.stripBankA.jumpHeaderToRGB(2, red, green, blue);
+    delay(6);
+    Encabulator.stripBankA.jumpHeaderToRGB(3, red, green, blue);
+    delay(6);
+    Encabulator.stripBankA.jumpHeaderToRGB(4, red, green, blue);
+    delay(6);
+ }
+ Encabulator.blackout();
+ delay(500);
+    for (int i = 0; i < 10; i++) // Flash all letters on and off in a random color.
   {
     int randR = random(1, 255);
     int randG = random(1, 255);
@@ -88,4 +154,47 @@ void loop()
     Encabulator.blackout();
     delay(750);
   }
+ Encabulator.blackout();
+ delay(500);
+    for (int i = 0; i < 5; i++) 
+ { 
+    Encabulator.stripBankA.jumpHeaderToRGB(1, 255, 0, 0); // jumpHeadertoRGB([Screw terminal number], [Red value], [Green], [Blue])
+    Encabulator.stripBankA.jumpHeaderToRGB(2, 0, 0, 0);
+    Encabulator.stripBankA.jumpHeaderToRGB(3, 0, 0, 0); 
+    Encabulator.stripBankA.jumpHeaderToRGB(4, 0, 0, 0); 
+    delay(250);
+    Encabulator.stripBankA.jumpHeaderToRGB(1, 0, 0, 0); 
+    Encabulator.stripBankA.jumpHeaderToRGB(2, 255, 0, 0); 
+    Encabulator.stripBankA.jumpHeaderToRGB(3, 0, 0, 0); 
+    Encabulator.stripBankA.jumpHeaderToRGB(4, 0, 0, 0); 
+    delay(250);
+    Encabulator.stripBankA.jumpHeaderToRGB(1, 0, 0, 0); 
+    Encabulator.stripBankA.jumpHeaderToRGB(2, 0, 0, 0); 
+    Encabulator.stripBankA.jumpHeaderToRGB(3, 255, 0, 0); 
+    Encabulator.stripBankA.jumpHeaderToRGB(4, 0, 0, 0); 
+    delay(250);
+    Encabulator.stripBankA.jumpHeaderToRGB(1, 0, 0, 0); 
+    Encabulator.stripBankA.jumpHeaderToRGB(2, 0, 0, 0); 
+    Encabulator.stripBankA.jumpHeaderToRGB(3, 0, 0, 0); 
+    Encabulator.stripBankA.jumpHeaderToRGB(4, 255, 0, 0); 
+    delay(250);
+ }
+ Encabulator.blackout();
+ delay(500);
+    for (int i = 0; i < 255; i++) 
+ { 
+    int red = 255-i;
+    int green = i;
+    int blue = i;
+    Encabulator.stripBankA.jumpHeaderToRGB(1, red, green, blue);
+    delay(6);
+    Encabulator.stripBankA.jumpHeaderToRGB(2, red, green, blue);
+    delay(6);
+    Encabulator.stripBankA.jumpHeaderToRGB(3, red, green, blue);
+    delay(6);
+    Encabulator.stripBankA.jumpHeaderToRGB(4, red, green, blue);
+    delay(6);
+ }
+ Encabulator.blackout();
+ delay(500);
 }

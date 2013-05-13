@@ -41,12 +41,22 @@ int b = random(0,255);
     while (i > 56) {
       if (buttonState == HIGH && i == 57) {
         strip.setPixelColor(30,255,255,255);
+        strip.show();
         i = 59;
         break;
       }
       else if (buttonState == LOW && i == 57) {
         i = 0;
-        strip.setPixelColor(30,255,0,0);
+        strip.setPixelColor(58,255,0,0);
+        strip.setPixelColor(57,255,0,0);
+        strip.setPixelColor(56,255,0,0);
+        strip.setPixelColor(55,255,0,0);
+        strip.setPixelColor(0,0,255,0);
+        strip.setPixelColor(1,0,255,0);
+        strip.setPixelColor(2,0,255,0);
+        strip.setPixelColor(3,0,255,0);
+        strip.show();
+        delay(2000);
         break; 
       }
     }
